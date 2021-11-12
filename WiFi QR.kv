@@ -1,0 +1,52 @@
+MDScreen:
+    MDCard:
+        orientation: "vertical"
+        padding: 50
+        spacing: 20
+        size_hint: None, None
+        size: 250, 550
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elivation: 90
+        radius: 12
+        MDSwitch:
+            on_active: app.profile(*args)
+            width: "45dp"
+            pos_hint: {"center_x": 1, "center_y": 1}
+        MDLabel:
+            id: title
+            text: "WiFi QR Code Generater"
+            font_size: 25
+            halign: "center"
+        MDTextFieldRound:
+            id: name
+            pos_hint: {"center_x": .5, "center_y": .5}
+            icon_left: "account"
+            hint_text: "WiFi Name"
+        MDTextFieldRound:
+            id: auth_type
+            icon_left: "security"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            hint_text: "Athentication"
+        
+        MDTextFieldRound:
+            id: password
+            icon_left: "eye-off"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            hint_text: "WiFi Password"
+        MDFillRoundFlatIconButton:
+            text: "Generate"
+            icon: "file-plus"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_release: app.generate()
+        MDRoundFlatIconButton:
+            text: "Clear"
+            icon: "delete"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_release: app.clear()
+        MDIconButton:
+            id: image
+            pos_hint: {"center_x": .5}
+            user_font_size: "40dp"
+            icon: "img.png"
+            on_release: app.show()
+        
